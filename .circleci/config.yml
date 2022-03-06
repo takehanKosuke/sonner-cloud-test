@@ -15,9 +15,6 @@ jobs:
             npm install c8
             npm install nyc
       - run:
-          name: work dir
-          command: pwd
-      - run:
           name: Run test
           command: npm test
       - run:
@@ -25,3 +22,12 @@ jobs:
           command: npm run report
       - store_artifacts:
           path: coverage
+      - sonarcloud/scan
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.3
+
+workflows:
+  main:
+    jobs:
+      - build:
+          context: SonarCloud
