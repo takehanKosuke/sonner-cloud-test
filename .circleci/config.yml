@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  test:
     docker:
       - image: cimg/node:17.2.0
         auth:
@@ -10,9 +10,10 @@ jobs:
       - run:
           name: Install JUnit coverage reporter
           command: |
-            npm install ava --save-dev
-            npm install c8 --save-dev
-            npm install nyc --save-dev
+            npm init ava
+            npm install --save-dev ava
+            npm install --save-dev c8
+            npm install --save-dev nyc
 
       - run:
           name: Run tests with JUnit as reporter
