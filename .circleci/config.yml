@@ -22,3 +22,13 @@ jobs:
           command: npm run report
       - store_artifacts:
           path: coverage
+      - sonarcloud/scan
+
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.3
+
+workflows:
+  main:
+    jobs:
+      - build:
+          context: SonarCloud
