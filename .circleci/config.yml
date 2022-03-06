@@ -22,7 +22,6 @@ jobs:
           command: npm test
       - run:
           name: Run report
-          command: npm report
-
+          command: npm run report
       - store_artifacts:
           path: coverage
