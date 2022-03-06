@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
+  "directories": {},
   "scripts": {
-    "test": "ava"
+    "test": "nyc ava",
+    "report": "nyc report --reporter=html"
   },
   "ava": {
     "files": [
@@ -22,6 +21,8 @@
     "express": "^4.17.3"
   },
   "devDependencies": {
-    "ava": "^4.0.1"
+    "ava": "^4.0.1",
+    "c8": "^7.11.0",
+    "nyc": "^15.1.0"
   }
 }
