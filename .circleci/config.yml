@@ -8,17 +8,16 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - run:
-          name: Install JUnit coverage reporter
+          name: Install ava
           command: |
-            npm init ava
             npm install --save-dev ava
             npm install --save-dev c8
             npm install --save-dev nyc
 
       - run:
-          name: Run tests with JUnit as reporter
+          name: Run tests
           command: |
-            npm run ava
+            npm run test
             npm run report
       - store_artifacts:
           path: coverage
