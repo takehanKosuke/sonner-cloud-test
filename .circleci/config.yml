@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  test:
+  build:
     docker:
       - image: cimg/node:17.2.0
         auth:
@@ -13,7 +13,6 @@ jobs:
             npm install ava --save-dev
             npm install c8 --save-dev
             npm install nyc --save-dev
-
       - run:
           name: Run tests
           command: |
