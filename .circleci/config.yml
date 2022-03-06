@@ -23,7 +23,6 @@ jobs:
       - store_artifacts:
           path: coverage
       - sonarcloud/scan
-
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.3
 
