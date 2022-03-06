@@ -10,13 +10,12 @@ jobs:
       - run:
           name: Install ava
           command: |
-            npm install ava --save-dev
-            npm install c8 --save-dev
-            npm install nyc --save-dev
+            npm install ava
+            npm install c8
+            npm install nyc
       - run:
           name: Run tests
           command: npm test
-            npm install nyc --save-dev
       - run:
           name: Run report
           command: npm report
