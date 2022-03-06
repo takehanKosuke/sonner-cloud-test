@@ -1,0 +1,27 @@
+{
+  "name": "coverage-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "ava": {
+    "files": [
+      "test/util/*.js"
+    ],
+    "concurrency": 2,
+    "timeout": "10s"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "ava": "^4.0.1"
+  }
+}
