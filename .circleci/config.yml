@@ -15,8 +15,11 @@ jobs:
             npm install nyc --save-dev
       - run:
           name: Run tests
-          command: |
-            npm test
-            npm report
+          command: npm test
+            npm install nyc --save-dev
+      - run:
+          name: Run report
+          command: npm report
+
       - store_artifacts:
           path: coverage
