@@ -1,0 +1,23 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cimg/node:17.2.0
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - run:
+          name: Install JUnit coverage reporter
+          command: |
+            npm install ava --save-dev
+            npm install c8 --save-dev
+            npm install nyc --save-dev
+
+      - run:
+          name: Run tests with JUnit as reporter
+          command: |
+            npm run ava
+            npm run report
+      - store_artifacts:
+          path: coverage
