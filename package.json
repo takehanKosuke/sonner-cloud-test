@@ -6,7 +6,7 @@
   "directories": {},
   "scripts": {
     "test": "nyc ava",
-    "report": "nyc report --reporter=html"
+    "report": "nyc --reporter=lcov --reporter=text npm run test"
   },
   "ava": {
     "files": [
