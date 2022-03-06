@@ -14,7 +14,10 @@ jobs:
             npm install c8
             npm install nyc
       - run:
-          name: Run tests
+          name: work dir
+          command: pwd
+      - run:
+          name: Run test
           command: npm test
       - run:
           name: Run report
